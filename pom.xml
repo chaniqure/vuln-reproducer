@@ -15,10 +15,11 @@
       <artifactId>lombok</artifactId>
       <version>1.18.30</version>
     </dependency>
+    <!-- 使用autoType进行反序列化的漏洞 -->
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
-      <version>1.2.54</version>
+      <version>1.2.24</version>
     </dependency>
   </dependencies>
 </project>
