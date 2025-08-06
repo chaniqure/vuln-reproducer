@@ -13,7 +13,7 @@ public class FastJsonController {
     @PostMapping
     public String post(@RequestBody String body) {
         // 这里可以添加日志记录或其他处理逻辑
-        User vuln = JSONObject.parseObject(body, User.class);
+        JSONObject object = JSONObject.parseObject(body);
         return "success";
     }
 }
