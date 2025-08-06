@@ -17,24 +17,24 @@ public class FastJsonTest {
         System.out.println("=== 测试内部类与顶级类的区别 ===");
 
         // 测试1：尝试触发顶级类（应该成功）
-        // String topLevelClassJson = "{\"@type\":\"com.cc.safe.fastjson.Vuln\",\"name\":\"张三\",\"age\":\"20\",\"msg\":\"这是一个秘密信息\"}";
-        // System.out.println("测试顶级类: " + topLevelClassJson);
-        // try {
-        //     Object obj = JSON.parseObject(topLevelClassJson);
-        //     System.out.println("顶级类反序列化成功: " + obj);
-        // } catch (Exception e) {
-        //     System.err.println("顶级类反序列化失败: " + e.getMessage());
-        // }
+        String topLevelClassJson = "{\"@type\":\"com.cc.safe.fastjson.Vuln\",\"name\":\"张三\",\"age\":\"20\",\"msg\":\"这是一个秘密信息\"}";
+        System.out.println("测试顶级类: " + topLevelClassJson);
+        try {
+            Object obj = JSON.parseObject(topLevelClassJson);
+            System.out.println("顶级类反序列化成功: " + obj);
+        } catch (Exception e) {
+            System.err.println("顶级类反序列化失败: " + e.getMessage());
+        }
 
         // 测试2：尝试触发内部类（应该失败或不触发构造函数）
-        String innerClassJson = "{\"@type\":\"com.cc.safe.fastjson.FastJsonTest$InnerVuln\",\"name\":\"李四\",\"age\":\"25\",\"msg\":\"内部类测试\"}";
-        System.out.println("\n测试内部类: " + innerClassJson);
-        try {
-            Object obj = JSON.parseObject(innerClassJson);
-            System.out.println("内部类反序列化成功: " + obj);
-        } catch (Exception e) {
-            System.err.println("内部类反序列化失败: " + e.getMessage());
-        }
+        // String innerClassJson = "{\"@type\":\"com.cc.safe.fastjson.FastJsonTest$InnerVuln\",\"name\":\"李四\",\"age\":\"25\",\"msg\":\"内部类测试\"}";
+        // System.out.println("\n测试内部类: " + innerClassJson);
+        // try {
+        //     Object obj = JSON.parseObject(innerClassJson);
+        //     System.out.println("内部类反序列化成功: " + obj);
+        // } catch (Exception e) {
+        //     System.err.println("内部类反序列化失败: " + e.getMessage());
+        // }
 
     }
 

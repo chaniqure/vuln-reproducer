@@ -7,6 +7,7 @@ import java.io.*;
 
 @AllArgsConstructor
 @ToString
+@NoArgsConstructor
 public class User implements Serializable {
     @Getter
     @Setter
